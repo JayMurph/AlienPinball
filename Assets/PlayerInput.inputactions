@@ -1,0 +1,34 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "92603dd1-b522-42c2-9e5a-4bc7ceff8e0a",
+            "actions": [
+                {
+                    "name": "Plunger",
+                    "type": "Value",
+                    "id": "e8ff0807-48e7-4799-999b-2655dde6d1b8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "375cf85e-f7b0-45f2-aa6d-38589f09ac8c",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Plunger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
