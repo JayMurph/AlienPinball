@@ -30,7 +30,7 @@ public class PlungerController : MonoBehaviour
         if(compress)
         {
             joint.spring = 0;
-            rb.AddForce(transform.forward * -1 * CompressForce);
+            rb.AddForce(transform.forward * -1 * CompressForce * Time.fixedDeltaTime);
         }
         else if (joint.spring == 0)
         {

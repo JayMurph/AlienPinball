@@ -7,8 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputReader : MonoBehaviour
 {
     public PlungerController plunger;
-
-    bool plungerDown = false;
+    public PaddleController paddleLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +26,10 @@ public class PlayerInputReader : MonoBehaviour
     public void OnPlunger(InputValue val)
     {
         plunger.Compress(val.Get<float>() > 0);
+    }
+
+    public void OnPaddleLeft(InputValue val)
+    {
+        paddleLeft.SetPosition(val.Get<float>() > 0);
     }
 }
