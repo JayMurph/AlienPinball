@@ -38,7 +38,7 @@ public class PinballGameController : MonoBehaviour
     {
     }
 
-    public void OnBallDeath(BallController ball)
+    public void OnBallDeath()
     {
         if (balls == 0)
         {
@@ -48,7 +48,6 @@ public class PinballGameController : MonoBehaviour
         {
             balls--;
             ballsRemainingValueText.text = balls.ToString();
-            Destroy(ball.gameObject);
             var newBall = Instantiate(ballPrefab, ballSpawnTransform.parent);
             newBall.transform.position = ballSpawnTransform.position;
         }
