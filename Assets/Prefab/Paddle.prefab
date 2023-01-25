@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c609f56642b8b334e892fdd011921e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 150000
+  Force: 130000
   Spring: 1000
+  Min: -50
+  Max: 0
   paddleBody: {fileID: 3699887113140545893}
   joint: {fileID: 3699887113140545918}
 --- !u!1 &3699887112831438437
