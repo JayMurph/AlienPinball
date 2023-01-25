@@ -6,28 +6,20 @@ public class PaddleController : MonoBehaviour
 {
     public float Force = 100f;
 
-    HingeJoint joint;
-    Rigidbody rb;
-
+    public Rigidbody paddleBody;
     bool isUp = false;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        joint = GetComponent<HingeJoint>();
-    }
+    void Start() { }
 
     // Update is called once per frame
-    void Update()
-    {
-    }
+    void Update() { }
 
     private void FixedUpdate()
     {
         if (isUp)
         {
-            rb.AddForce(transform.forward * Force * Time.fixedDeltaTime);
+            paddleBody.AddForce(paddleBody.transform.forward * Force * Time.fixedDeltaTime);
         }
     }
 
