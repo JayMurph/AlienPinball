@@ -6,8 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(SpringJoint))]
 public class PlungerController : MonoBehaviour
 {
-    public float CompressForce = 20f;
-    public float Spring = 50f;
+    public float CompressForce = 400f;
+    public float Spring = 100f;
 
     SpringJoint joint;
     Rigidbody rb;
@@ -18,6 +18,14 @@ public class PlungerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         joint = GetComponent<SpringJoint>();
+    }
+
+    private void OnValidate()
+    {
+        if (joint != null)
+        {
+            joint.spring = Spring;
+        }
     }
 
     // Update is called once per frame
