@@ -8,12 +8,23 @@ public class ScoreOnBallCollision : MonoBehaviour
     public float TimeoutSecs;
 
     [SerializeField]
+    private Light l = null;
+
+    [SerializeField]
     private MessageChannelScriptableObject messageChannel;
 
     [SerializeField]
     private string ballTag;
 
     private float lastScoreTime = 0;
+
+    private void Start()
+    {
+        if (l != null)
+        {
+            l.enabled = false;
+        }
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -24,6 +35,21 @@ public class ScoreOnBallCollision : MonoBehaviour
         {
             lastScoreTime = Time.time;
             messageChannel.Score.Invoke(ScoreValue);
+            StartCoroutine(RunLight());
+        }
+    }
+
+    IEnumerator RunLight()
+    {
+        if ( l != null)
+        {
+            l.enabled = true;
+            yield return new WaitForSeconds(TimeoutSecs);
+            l.enabled = false;
+        }
+        else
+        {
+            yield return null;
         }
     }
 }
