@@ -6,25 +6,29 @@ public class SlingShotController : MonoBehaviour
 {
     public float Force = 1500;
 
+    [SerializeField]
+    private string ballTag;
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        BallController ball = collision.gameObject.GetComponent<BallController>();
-
-        if (ball != null)
+        if (collision.gameObject.tag == ballTag)
         {
-            ball.AddForce(collision.GetContact(0).normal * -1 * Force);
+            BallController ball = collision.gameObject.GetComponent<BallController>();
+
+            if (ball != null)
+            {
+                ball.AddForce(collision.GetContact(0).normal * -1 * Force);
+            }
         }
     }
 }

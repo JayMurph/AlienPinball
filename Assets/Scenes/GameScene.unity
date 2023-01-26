@@ -432,8 +432,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174930300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.13888873, z: 0.00000074505806}
-  m_LocalScale: {x: 1, y: 0.7222, z: 1}
+  m_LocalPosition: {x: 0.10416666, y: -0.13888873, z: 0.00000074505806}
+  m_LocalScale: {x: 0.7917, y: 0.7222, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 768264822}
@@ -544,7 +544,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
-  m_ConnectedAnchor: {x: 0, y: 0, z: 1}
+  m_ConnectedAnchor: {x: 0, y: -0.15, z: 1}
   serializedVersion: 2
   m_Spring: 100
   m_Damper: 0.5
@@ -629,11 +629,12 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   StartingBalls: 3
+  messageChannel: {fileID: 11400000, guid: 532c0d4525af96a4c84bdf9c45f7fc83, type: 2}
   ballSpawnTransform: {fileID: 635377846}
   ballPrefab: {fileID: 5081024801313235435, guid: b4efcbfab3de805459acd9d0096d5006,
     type: 3}
   ballsRemainingValueText: {fileID: 1424148115}
-  pointsValueText: {fileID: 400146126}
+  scoreValueText: {fileID: 400146126}
 --- !u!1 &227067636
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,11 +800,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PopBumper (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1906973491643875262, guid: f9665fcc4b7a53041a0ad2a8580da714,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -844,8 +840,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278951381}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.25, y: 1, z: -5.039}
-  m_LocalScale: {x: 0.5, y: 2, z: 19.922812}
+  m_LocalPosition: {x: 8.3676, y: 0.7500001, z: -5.039}
+  m_LocalScale: {x: 0.73525, y: 1.5, z: 19.922812}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444044434}
@@ -1607,11 +1603,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PopBumper (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906973491643875262, guid: f9665fcc4b7a53041a0ad2a8580da714,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -3428,17 +3419,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d07977172e2547e4188d285ff3aca2fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d07977172e2547e4188d285ff3aca2fe,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.49999982
+      value: 0.49542105
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d07977172e2547e4188d285ff3aca2fe,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.46155274
+      value: 0.35522485
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d07977172e2547e4188d285ff3aca2fe,
         type: 3}
@@ -3448,7 +3439,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d07977172e2547e4188d285ff3aca2fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.06777286
+      value: 0.011157519
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d07977172e2547e4188d285ff3aca2fe,
         type: 3}
@@ -5423,11 +5414,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PopBumper (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906973491643875262, guid: f9665fcc4b7a53041a0ad2a8580da714,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -9409,11 +9395,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PopBumper (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 1906973491643875262, guid: f9665fcc4b7a53041a0ad2a8580da714,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9569,11 +9550,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PopBumper (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906973491643875262, guid: f9665fcc4b7a53041a0ad2a8580da714,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -10532,16 +10508,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 444044434}
     m_Modifications:
-    - target: {fileID: 8987900020917231786, guid: 634947e0a01871c45be31e15705f3b35,
-        type: 3}
-      propertyPath: Force
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987900020917231786, guid: 634947e0a01871c45be31e15705f3b35,
-        type: 3}
-      propertyPath: ReflectAngleRange
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 8987900020917231790, guid: 634947e0a01871c45be31e15705f3b35,
         type: 3}
       propertyPath: m_RootOrder
@@ -11969,11 +11935,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PopBumper
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906973491643875262, guid: f9665fcc4b7a53041a0ad2a8580da714,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}

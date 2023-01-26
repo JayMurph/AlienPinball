@@ -7,7 +7,10 @@ public class PopBumperController : MonoBehaviour
     public float Force = 5000f;
     public float ReflectAngleRange = 60f;
 
-    float reflectAngleHalf;
+    [SerializeField]
+    private string ballTag;
+
+    private float reflectAngleHalf;
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +30,16 @@ public class PopBumperController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        BallController ball = collision.gameObject.GetComponent<BallController>();
-
-        if (ball != null)
+        if (collision.gameObject.tag == ballTag)
         {
-            float angle = Random.Range(-reflectAngleHalf, reflectAngleHalf);
-            Vector3 dir = Quaternion.Euler(new Vector3(0, angle, 0)) * (collision.GetContact(0).normal * -1);
-            ball.AddForce(dir * Force);
+            BallController ball = collision.gameObject.GetComponent<BallController>();
+
+            if (ball != null)
+            {
+                float angle = Random.Range(-reflectAngleHalf, reflectAngleHalf);
+                Vector3 dir = Quaternion.Euler(new Vector3(0, angle, 0)) * (collision.GetContact(0).normal * -1);
+                ball.AddForce(dir * Force);
+            }
         }
     }
 }

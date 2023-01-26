@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8494192280960738732}
   - component: {fileID: 8494192280960738720}
   - component: {fileID: 8494192280960738721}
+  - component: {fileID: 8805103810249358016}
   m_Layer: 0
   m_Name: HorizontalFlipGateBody
   m_TagString: Untagged
@@ -151,6 +152,22 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8805103810249358016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8494192280960738730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c8c87714e187440923f5585066a41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreValue: 1
+  TimeoutSecs: 0.5
+  messageChannel: {fileID: 11400000, guid: 532c0d4525af96a4c84bdf9c45f7fc83, type: 2}
+  ballTag: Ball
 --- !u!1 &8494192281265831070
 GameObject:
   m_ObjectHideFlags: 0

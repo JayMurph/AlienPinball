@@ -12,6 +12,9 @@ public class PinballGameController : MonoBehaviour
     public int StartingBalls = 3;
 
     [SerializeField]
+    MessageChannelScriptableObject messageChannel;
+
+    [SerializeField]
     Transform ballSpawnTransform;
 
     [SerializeField]
@@ -21,7 +24,7 @@ public class PinballGameController : MonoBehaviour
     TextMeshProUGUI ballsRemainingValueText;
 
     [SerializeField]
-    TextMeshProUGUI pointsValueText;
+    TextMeshProUGUI scoreValueText;
 
     int balls;
     int score;
@@ -31,11 +34,24 @@ public class PinballGameController : MonoBehaviour
     {
         balls = StartingBalls - 1;
         ballsRemainingValueText.text = balls.ToString();
+
+        messageChannel.Score.AddListener(OnScore); 
+    }
+
+    private void OnScore(int amt)
+    {
+        score += amt;
+        scoreValueText.text = score.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+    }
+
+    private void OnDestroy()
+    {
+        messageChannel.Score.RemoveListener(OnScore); 
     }
 
     public void OnBallDeath()
