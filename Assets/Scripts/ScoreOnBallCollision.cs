@@ -11,7 +11,7 @@ public class ScoreOnBallCollision : MonoBehaviour
     private Light l = null;
 
     [SerializeField]
-    private MessageChannelScriptableObject messageChannel;
+    private MessageChannelScriptableObject scoreChannel;
 
     [SerializeField]
     private string ballTag;
@@ -34,7 +34,7 @@ public class ScoreOnBallCollision : MonoBehaviour
         )
         {
             lastScoreTime = Time.time;
-            messageChannel.Score.Invoke(ScoreValue);
+            scoreChannel.Event.Invoke(ScoreValue);
             StartCoroutine(RunLight());
         }
     }

@@ -295,5 +295,5 @@ MonoBehaviour:
   ScoreValue: 3
   TimeoutSecs: 0.5
   l: {fileID: 6869928653596110471}
-  messageChannel: {fileID: 11400000, guid: 532c0d4525af96a4c84bdf9c45f7fc83, type: 2}
+  scoreChannel: {fileID: 11400000, guid: 532c0d4525af96a4c84bdf9c45f7fc83, type: 2}
   ballTag: Ball

@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f31c3a8e159f064c98d903c42cb9bbb, type: 3}
-  m_Name: MessageChannel
+  m_Name: ScoreChannel
   m_EditorClassIdentifier: 

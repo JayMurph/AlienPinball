@@ -6,5 +6,5 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/MessageChannelScriptableObject", order = 1)]
 public class MessageChannelScriptableObject : ScriptableObject
 {
-    public UnityEvent<int> Score;
+    public UnityEvent<int> Event;
 }

@@ -13,7 +13,10 @@ public class PinballGameController : MonoBehaviour
     public int StartingBalls = 3;
 
     [SerializeField]
-    MessageChannelScriptableObject messageChannel;
+    AudioSource bellSound;
+
+    [SerializeField]
+    MessageChannelScriptableObject scoreEventChannel;
 
     [SerializeField]
     Transform ballSpawnTransform;
@@ -36,13 +39,14 @@ public class PinballGameController : MonoBehaviour
         balls = StartingBalls - 1;
         ballsRemainingValueText.text = balls.ToString();
 
-        messageChannel.Score.AddListener(OnScore); 
+        scoreEventChannel.Event.AddListener(OnScore); 
     }
 
     private void OnScore(int amt)
     {
         score += amt;
         scoreValueText.text = score.ToString();
+        bellSound.Play();
     }
 
     // Update is called once per frame
@@ -52,7 +56,7 @@ public class PinballGameController : MonoBehaviour
 
     private void OnDestroy()
     {
-        messageChannel.Score.RemoveListener(OnScore); 
+        scoreEventChannel.Event.RemoveListener(OnScore); 
     }
 
     public void OnBallDeath()
