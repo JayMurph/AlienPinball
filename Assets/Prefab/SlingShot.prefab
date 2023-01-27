@@ -45,8 +45,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.6792453, g: 0.81509435, b: 0.9056604, a: 1}
-  m_Intensity: 5
-  m_Range: 4
+  m_Intensity: 0.5
+  m_Range: 0.4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad50ed164538cde46800cef94e5b2059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 450
+  Force: 20
   ballTag: Ball
 --- !u!54 &7480390691895869781
 Rigidbody:
