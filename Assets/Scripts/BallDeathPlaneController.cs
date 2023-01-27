@@ -7,28 +7,15 @@ public class BallDeathPlaneController : MonoBehaviour
 {
     public UnityEvent BallCollision;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    [SerializeField]
+    private string ballTag;
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == ballTag)
         {
-            BallController ball = collision.gameObject.GetComponent<BallController>();
-            if (ball != null)
-            {
-                Debug.Log("BallCollision");
-                Destroy(ball.gameObject);
-                BallCollision.Invoke();
-            }
+            Destroy(collision.gameObject);
+            BallCollision.Invoke();
         }
     }
 }

@@ -9,15 +9,17 @@ public class PaddleController : MonoBehaviour
     public UnityEvent Raising;
     public UnityEvent Lowered;
 
-    public float Force = 150000f;
-    public float Spring = 1000f;
+    public float Force = 3500;
+    public float Spring = 15;
     public float Min = -50f;
     public float Max = 0f;
 
-    public Rigidbody paddleBody;
-    public HingeJoint joint;
+    [SerializeField]
+    private Rigidbody body;
+    [SerializeField]
+    private HingeJoint joint;
 
-    private bool isUp = false;
+    private bool isRaised = false;
 
     private void OnValidate()
     {
@@ -37,32 +39,23 @@ public class PaddleController : MonoBehaviour
     // Start is called before the first frame update
     void Start() 
     {
-        if (joint != null)
-        {
-            var temp = joint.spring;
-            temp.spring = Spring;
-            joint.spring = temp;
-        }
-    }
-
-    // Update is called once per frame
-    void Update() 
-    {
+        var temp = joint.spring;
+        temp.spring = Spring;
+        joint.spring = temp;
     }
 
     private void FixedUpdate()
     {
-        if (isUp)
+        if (isRaised)
         {
-            paddleBody.AddForce(paddleBody.transform.forward * Force * Time.fixedDeltaTime);
+            body.AddForce(body.transform.forward * Force * Time.fixedDeltaTime);
         }
     }
 
-
-    public void SetPosition(bool up)
+    public void SetRaised(bool raised)
     {
-        isUp = up;
-        if (isUp)
+        isRaised = raised;
+        if (isRaised)
         {
             Raising.Invoke();
         }

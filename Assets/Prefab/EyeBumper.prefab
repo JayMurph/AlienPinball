@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreValue: 4
   TimeoutSecs: 0.5
-  l: {fileID: 8630483028262334191}
+  scoreLight: {fileID: 8630483028262334191}
   scoreChannel: {fileID: 11400000, guid: 532c0d4525af96a4c84bdf9c45f7fc83, type: 2}
   ballTag: Ball
 --- !u!1 &6524760647837558686

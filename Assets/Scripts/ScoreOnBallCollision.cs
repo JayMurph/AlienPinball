@@ -8,7 +8,7 @@ public class ScoreOnBallCollision : MonoBehaviour
     public float TimeoutSecs;
 
     [SerializeField]
-    private Light l = null;
+    private Light scoreLight = null;
 
     [SerializeField]
     private MessageChannelScriptableObject scoreChannel;
@@ -20,9 +20,9 @@ public class ScoreOnBallCollision : MonoBehaviour
 
     private void Start()
     {
-        if (l != null)
+        if (scoreLight != null)
         {
-            l.enabled = false;
+            scoreLight.enabled = false;
         }
     }
 
@@ -41,11 +41,11 @@ public class ScoreOnBallCollision : MonoBehaviour
 
     IEnumerator RunLight()
     {
-        if ( l != null)
+        if (scoreLight != null)
         {
-            l.enabled = true;
+            scoreLight.enabled = true;
             yield return new WaitForSeconds(TimeoutSecs);
-            l.enabled = false;
+            scoreLight.enabled = false;
         }
         else
         {

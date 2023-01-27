@@ -14,42 +14,35 @@ public class PlungerController : MonoBehaviour
     public float Spring = 100f;
     public float Damper = 4f;
 
-    SpringJoint joint;
-    Rigidbody rb;
-    bool compress = false;
+    private SpringJoint joint;
+    private Rigidbody body;
+    private bool isCompressed = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        body = GetComponent<Rigidbody>();
         joint = GetComponent<SpringJoint>();
-        if (joint != null)
-        {
-            joint.spring = Spring;
-            joint.damper = Damper;
-        }
+
+        joint.spring = Spring;
+        joint.damper = Damper;
     }
 
     void OnValidate()
     {
-        if (joint != null)
-        {
-            joint.spring = Spring;
-            joint.damper = Damper;
-        }
-    }
+        body = GetComponent<Rigidbody>();
+        joint = GetComponent<SpringJoint>();
 
-    // Update is called once per frame
-    void Update()
-    {
+        joint.spring = Spring;
+        joint.damper = Damper;
     }
 
     private void FixedUpdate()
     {
-        if(compress)
+        if(isCompressed)
         {
             joint.spring = 0;
-            rb.AddForce(transform.forward * -1 * CompressForce * Time.fixedDeltaTime);
+            body.AddForce(transform.forward * -1 * CompressForce * Time.fixedDeltaTime);
         }
         else if (joint.spring == 0)
         {
@@ -59,8 +52,8 @@ public class PlungerController : MonoBehaviour
 
     public void Compress(bool c)
     {
-        compress = c;
-        if (compress)
+        isCompressed = c;
+        if (isCompressed)
         {
             Compressing.Invoke();
         }

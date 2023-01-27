@@ -13,34 +13,34 @@ public class PinballGameController : MonoBehaviour
     public int StartingBalls = 3;
 
     [SerializeField]
-    AudioSource backgroundMusic;
+    private AudioSource backgroundMusic;
     [SerializeField]
-    AudioSource ballDeathSound;
+    private AudioSource ballDeathSound;
     [SerializeField]
-    AudioSource bellSound;
+    private AudioSource bellSound;
     [SerializeField]
-    AudioSource gameOverSound;
+    private AudioSource gameOverSound;
 
     [SerializeField]
-    MessageChannelScriptableObject scoreEventChannel;
+    private MessageChannelScriptableObject scoreEventChannel;
 
     [SerializeField]
-    Transform ballSpawnTransform;
+    private Transform ballSpawnTransform;
 
     [SerializeField]
-    GameObject ballPrefab;
+    private GameObject ballPrefab;
 
     [SerializeField]
-    TextMeshProUGUI ballsRemainingValueText;
+    private TextMeshProUGUI ballsRemainingValueText;
 
     [SerializeField]
-    TextMeshProUGUI scoreValueText;
+    private TextMeshProUGUI scoreValueText;
 
     [SerializeField]
     TextMeshProUGUI finalScoreValueText;
 
-    int balls;
-    int score;
+    private int balls;
+    private int score;
 
     // Start is called before the first frame update
     void Start()
@@ -58,11 +58,6 @@ public class PinballGameController : MonoBehaviour
         bellSound.Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private void OnDestroy()
     {
         scoreEventChannel.Event.RemoveListener(OnScore); 
@@ -70,8 +65,8 @@ public class PinballGameController : MonoBehaviour
 
     public void OnBallDeath()
     {
-        Debug.Log("BallDeath");
         ballDeathSound.Play();
+
         if (balls == 0)
         {
             backgroundMusic.Stop();

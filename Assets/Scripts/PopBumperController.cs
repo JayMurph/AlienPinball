@@ -18,11 +18,6 @@ public class PopBumperController : MonoBehaviour
         reflectAngleHalf = ReflectAngleRange / 2;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private void OnValidate()
     {
         reflectAngleHalf = ReflectAngleRange / 2;

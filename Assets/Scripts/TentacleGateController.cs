@@ -3,33 +3,42 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class TentacleGateController : MonoBehaviour
 {
-    Animator animator;
+    [SerializeField]
+    private string ballTag;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private string isOpenPropertyName;
+
+    private Animator animator;
+
+    private void Start()
     {
-        animator = GetComponentInChildren<Animator>();        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnValidate()
     {
+        animator = GetComponent<Animator>();
     }
 
     public void Open()
     {
-        animator.SetBool("IsOpen", true);
+        animator.SetBool(isOpenPropertyName, true);
     }
 
     public void Close()
     {
-        animator.SetBool("IsOpen", false);
+        animator.SetBool(isOpenPropertyName, false);
     }
 
     void OnTriggerExit(Collider other)
     {
-        Close();     
+        if (other.tag == ballTag)
+        {
+            Close();     
+        }
     }
 }

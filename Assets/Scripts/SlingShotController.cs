@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class SlingShotController : MonoBehaviour
 {
-    public float Force = 1500;
+    public float Force;
 
     [SerializeField]
     private string ballTag;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     void OnCollisionEnter(Collision collision)
     {

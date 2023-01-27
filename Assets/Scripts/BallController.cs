@@ -13,11 +13,6 @@ public class BallController : MonoBehaviour
         body = GetComponent<Rigidbody>();        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void AddForce(Vector3 force)
     {
         body.AddForce(force);
