@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c8c87714e187440923f5585066a41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreValue: 5
+  ScoreValue: 4
   TimeoutSecs: 0.5
   l: {fileID: 8630483028262334191}
   scoreChannel: {fileID: 11400000, guid: 532c0d4525af96a4c84bdf9c45f7fc83, type: 2}
