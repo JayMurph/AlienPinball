@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(SpringJoint))]
 public class PlungerController : MonoBehaviour
 {
+    public UnityEvent Compressing;
+    public UnityEvent Released;
+
     public float CompressForce = 400f;
     public float Spring = 100f;
 
@@ -49,6 +53,14 @@ public class PlungerController : MonoBehaviour
     public void Compress(bool c)
     {
         compress = c;
+        if (compress)
+        {
+            Compressing.Invoke();
+        }
+        else
+        {
+            Released.Invoke();
+        }
     }
 
 }

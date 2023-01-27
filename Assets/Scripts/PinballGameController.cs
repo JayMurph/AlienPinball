@@ -13,7 +13,13 @@ public class PinballGameController : MonoBehaviour
     public int StartingBalls = 3;
 
     [SerializeField]
+    AudioSource backgroundMusic;
+    [SerializeField]
+    AudioSource ballDeathSound;
+    [SerializeField]
     AudioSource bellSound;
+    [SerializeField]
+    AudioSource gameOverSound;
 
     [SerializeField]
     MessageChannelScriptableObject scoreEventChannel;
@@ -29,6 +35,9 @@ public class PinballGameController : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI scoreValueText;
+
+    [SerializeField]
+    TextMeshProUGUI finalScoreValueText;
 
     int balls;
     int score;
@@ -61,8 +70,12 @@ public class PinballGameController : MonoBehaviour
 
     public void OnBallDeath()
     {
+            ballDeathSound.Play();
         if (balls == 0)
         {
+            backgroundMusic.Stop();
+            gameOverSound.Play();
+            finalScoreValueText.text = score.ToString();
             GameOver.Invoke();
         }
         else
