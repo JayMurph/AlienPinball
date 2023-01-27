@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 public class PaddleController : MonoBehaviour
 {
+    public UnityEvent Raising;
+    public UnityEvent Lowered;
+
     public float Force = 150000f;
     public float Spring = 1000f;
     public float Min = -50f;
@@ -58,5 +62,13 @@ public class PaddleController : MonoBehaviour
     public void SetPosition(bool up)
     {
         isUp = up;
+        if (isUp)
+        {
+            Raising.Invoke();
+        }
+        else
+        {
+            Lowered.Invoke();
+        }
     }
 }
