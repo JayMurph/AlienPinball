@@ -20,11 +20,15 @@ public class BallDeathPlaneController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        BallController ball = collision.gameObject.GetComponent<BallController>();
-        if (ball != null)
+        if (collision.gameObject.tag == "Ball")
         {
-            Destroy(ball.gameObject);
-            BallCollision.Invoke();
+            BallController ball = collision.gameObject.GetComponent<BallController>();
+            if (ball != null)
+            {
+                Debug.Log("BallCollision");
+                Destroy(ball.gameObject);
+                BallCollision.Invoke();
+            }
         }
     }
 }

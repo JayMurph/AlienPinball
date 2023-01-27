@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad50ed164538cde46800cef94e5b2059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 20
+  Force: 16
   ballTag: Ball
 --- !u!54 &7480390691895869781
 Rigidbody:

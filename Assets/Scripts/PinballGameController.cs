@@ -70,7 +70,8 @@ public class PinballGameController : MonoBehaviour
 
     public void OnBallDeath()
     {
-            ballDeathSound.Play();
+        Debug.Log("BallDeath");
+        ballDeathSound.Play();
         if (balls == 0)
         {
             backgroundMusic.Stop();
