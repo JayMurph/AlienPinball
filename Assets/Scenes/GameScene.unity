@@ -454,7 +454,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444044434}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &172032577
 Rigidbody:
@@ -522,7 +522,7 @@ Transform:
   - {fileID: 6389707271837609574}
   - {fileID: 768264822}
   m_Father: {fileID: 444044434}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &174930302
 BoxCollider:
@@ -1492,7 +1492,7 @@ PrefabInstance:
     - target: {fileID: 1906973491643875257, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (2)
+      value: EyeBumper3
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -1865,7 +1865,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444044434}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!64 &315363084
 MeshCollider:
@@ -2370,23 +2370,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2094865165}
-  - {fileID: 2063169411}
+  - {fileID: 661407144}
   - {fileID: 1095229480}
+  - {fileID: 2063169411}
   - {fileID: 635377846}
   - {fileID: 521914041}
   - {fileID: 278951382}
   - {fileID: 1242122169}
-  - {fileID: 2072131655}
-  - {fileID: 572828522}
-  - {fileID: 1753718575}
   - {fileID: 2037790902}
   - {fileID: 174930301}
   - {fileID: 172032576}
   - {fileID: 315363083}
-  - {fileID: 661407144}
   - {fileID: 1485718787}
   - {fileID: 3699887111081097427}
+  - {fileID: 2072131655}
+  - {fileID: 572828522}
+  - {fileID: 2094865165}
+  - {fileID: 1753718575}
   - {fileID: 750640347}
   - {fileID: 1574221910}
   - {fileID: 277341096}
@@ -2489,7 +2489,7 @@ PrefabInstance:
     - target: {fileID: 1906973491643875257, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (4)
+      value: EyeBumper5
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -2510,7 +2510,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28870
+  m_Name: pb_Mesh31554
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2754,7 +2754,7 @@ PrefabInstance:
     - target: {fileID: 8987900020917231791, guid: 634947e0a01871c45be31e15705f3b35,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (10)
+      value: UfoBumper5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 634947e0a01871c45be31e15705f3b35, type: 3}
@@ -2887,7 +2887,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444044434}
-  m_RootOrder: 8
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &572828523
 MeshCollider:
@@ -3352,7 +3352,7 @@ PrefabInstance:
     - target: {fileID: 7480390691895869806, guid: 631fbe05f06510e439629557e8d285fd,
         type: 3}
       propertyPath: m_Name
-      value: SlingShot (1)
+      value: SlingShot2
       objectReference: {fileID: 0}
     - target: {fileID: 7480390691895869807, guid: 631fbe05f06510e439629557e8d285fd,
         type: 3}
@@ -3641,7 +3641,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444044434}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &661407145
 MonoBehaviour:
@@ -4453,7 +4453,7 @@ PrefabInstance:
     - target: {fileID: 4516411019565887410, guid: 511f702e9698021429c49d40272a67e3,
         type: 3}
       propertyPath: m_Name
-      value: HorizontalFlipGate-3
+      value: FlipGate3
       objectReference: {fileID: 0}
     - target: {fileID: 4516411020257436008, guid: 511f702e9698021429c49d40272a67e3,
         type: 3}
@@ -4942,7 +4942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1095229480}
   m_Layer: 0
-  m_Name: BoxBounds
+  m_Name: BackBoxBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4965,21 +4965,15 @@ Transform:
   - {fileID: 1962843809}
   - {fileID: 1014741621}
   m_Father: {fileID: 444044434}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1123880623 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 359312179909449575, guid: a6f05c960da59214086344cbdccfa5b1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2094865164}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1157144205
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28728
+  m_Name: pb_Mesh31414
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5147,7 +5141,7 @@ PrefabInstance:
     - target: {fileID: 6432902652296521304, guid: 493e80b51d0a6ca4cb7edd65860aabf0,
         type: 3}
       propertyPath: m_Name
-      value: HorizontalFlipGate-5
+      value: FlipGate5
       objectReference: {fileID: 0}
     - target: {fileID: 6432902653796526210, guid: 493e80b51d0a6ca4cb7edd65860aabf0,
         type: 3}
@@ -10088,7 +10082,7 @@ PrefabInstance:
     - target: {fileID: 1906973491643875257, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (3)
+      value: EyeBumper4
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -10183,7 +10177,7 @@ PrefabInstance:
     - target: {fileID: 5853323488762650939, guid: d79804971c1fe524bbdc1f97430411dc,
         type: 3}
       propertyPath: m_Name
-      value: HorizontalFlipGate-2
+      value: FlipGate2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79804971c1fe524bbdc1f97430411dc, type: 3}
@@ -10416,7 +10410,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29046
+  m_Name: pb_Mesh31728
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10907,7 +10901,7 @@ Transform:
   - {fileID: 742700780}
   - {fileID: 1053823466}
   m_Father: {fileID: 444044434}
-  m_RootOrder: 15
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
 --- !u!114 &1485718788
 MonoBehaviour:
@@ -11199,7 +11193,7 @@ PrefabInstance:
     - target: {fileID: 1906973491643875257, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (5)
+      value: EyeBumper6
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -11370,7 +11364,7 @@ PrefabInstance:
     - target: {fileID: 1906973491643875257, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (1)
+      value: EyeBumper2
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -11397,7 +11391,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29016
+  m_Name: pb_Mesh31698
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11635,7 +11629,7 @@ PrefabInstance:
     - target: {fileID: 8987900020917231791, guid: 634947e0a01871c45be31e15705f3b35,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (8)
+      value: UfoBumper3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 634947e0a01871c45be31e15705f3b35, type: 3}
@@ -12093,7 +12087,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8293efad96d20144e8467dceb2de3b67,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8293efad96d20144e8467dceb2de3b67,
         type: 3}
@@ -12321,7 +12315,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28658
+  m_Name: pb_Mesh31344
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12559,7 +12553,7 @@ PrefabInstance:
     - target: {fileID: 8987900020917231791, guid: 634947e0a01871c45be31e15705f3b35,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (9)
+      value: UfoBumper4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 634947e0a01871c45be31e15705f3b35, type: 3}
@@ -12649,7 +12643,7 @@ PrefabInstance:
     - target: {fileID: 8987900020917231791, guid: 634947e0a01871c45be31e15705f3b35,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (7)
+      value: UfoBumper2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 634947e0a01871c45be31e15705f3b35, type: 3}
@@ -16223,7 +16217,7 @@ Transform:
   m_Children:
   - {fileID: 761777}
   m_Father: {fileID: 444044434}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2037790903
 BoxCollider:
@@ -16283,7 +16277,7 @@ Transform:
   m_Children:
   - {fileID: 595873607}
   m_Father: {fileID: 444044434}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!64 &2063169412
 MeshCollider:
@@ -16829,7 +16823,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444044434}
-  m_RootOrder: 7
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076917702
 GameObject:
@@ -16947,7 +16941,7 @@ PrefabInstance:
     - target: {fileID: 7480390691895869806, guid: 631fbe05f06510e439629557e8d285fd,
         type: 3}
       propertyPath: m_Name
-      value: SlingShot (2)
+      value: SlingShot3
       objectReference: {fileID: 0}
     - target: {fileID: 7480390691895869807, guid: 631fbe05f06510e439629557e8d285fd,
         type: 3}
@@ -17031,7 +17025,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a6f05c960da59214086344cbdccfa5b1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6f05c960da59214086344cbdccfa5b1,
         type: 3}
@@ -17071,22 +17065,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a6f05c960da59214086344cbdccfa5b1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6f05c960da59214086344cbdccfa5b1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9914449
+      value: 0.6087614
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6f05c960da59214086344cbdccfa5b1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13052624
+      value: 0.7933534
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6f05c960da59214086344cbdccfa5b1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -105
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6f05c960da59214086344cbdccfa5b1,
         type: 3}
@@ -17131,20 +17125,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2094865164}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &2094865166
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123880623}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 150581138598605843, guid: a6f05c960da59214086344cbdccfa5b1, type: 3}
 --- !u!1 &2104427448
 GameObject:
   m_ObjectHideFlags: 0
@@ -17323,7 +17303,7 @@ PrefabInstance:
     - target: {fileID: 4580118188756204260, guid: 9e4f6b6894d1ec943acf83c64d89a34f,
         type: 3}
       propertyPath: m_Name
-      value: HorizontalFlipGate-4
+      value: FlipGate4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4f6b6894d1ec943acf83c64d89a34f, type: 3}
@@ -17520,7 +17500,7 @@ PrefabInstance:
     - target: {fileID: 1906973491643875257, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper
+      value: EyeBumper1
       objectReference: {fileID: 0}
     - target: {fileID: 6925100310381459635, guid: f9665fcc4b7a53041a0ad2a8580da714,
         type: 3}
@@ -17609,7 +17589,7 @@ PrefabInstance:
     - target: {fileID: 2709659898721053028, guid: 10549a43c30c27944a5763b7cfe28a66,
         type: 3}
       propertyPath: m_Name
-      value: HorizontalFlipGate
+      value: FlipGate1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10549a43c30c27944a5763b7cfe28a66, type: 3}
@@ -17714,7 +17694,7 @@ Transform:
   - {fileID: 3699887112905165628}
   - {fileID: 3699887112663247930}
   m_Father: {fileID: 444044434}
-  m_RootOrder: 16
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -20, z: 0}
 --- !u!114 &3699887111081097428
 MonoBehaviour:
@@ -18173,7 +18153,7 @@ PrefabInstance:
     - target: {fileID: 7480390691895869806, guid: 631fbe05f06510e439629557e8d285fd,
         type: 3}
       propertyPath: m_Name
-      value: SlingShot
+      value: SlingShot1
       objectReference: {fileID: 0}
     - target: {fileID: 7480390691895869807, guid: 631fbe05f06510e439629557e8d285fd,
         type: 3}
@@ -18327,7 +18307,7 @@ PrefabInstance:
     - target: {fileID: 8987900020917231791, guid: 634947e0a01871c45be31e15705f3b35,
         type: 3}
       propertyPath: m_Name
-      value: PopBumper (6)
+      value: UfoBumper1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 634947e0a01871c45be31e15705f3b35, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2709659898087172030}
   - component: {fileID: 2709659898087172031}
   m_Layer: 0
-  m_Name: HorizontalFlipGate
+  m_Name: FlipGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
