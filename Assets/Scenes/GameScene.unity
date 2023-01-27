@@ -607,8 +607,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  CompressForce: 20
-  Spring: 650
+  CompressForce: 40
+  Spring: 600
 --- !u!145 &174930308
 SpringJoint:
   m_ObjectHideFlags: 0
@@ -623,7 +623,7 @@ SpringJoint:
   m_ConnectedAnchor: {x: 0, y: -0.15, z: 1}
   serializedVersion: 2
   m_Spring: 650
-  m_Damper: 0.5
+  m_Damper: 4
   m_MinDistance: 0
   m_MaxDistance: 0
   m_Tolerance: 0.025

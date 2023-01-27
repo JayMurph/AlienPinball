@@ -12,6 +12,7 @@ public class PlungerController : MonoBehaviour
 
     public float CompressForce = 400f;
     public float Spring = 100f;
+    public float Damper = 4f;
 
     SpringJoint joint;
     Rigidbody rb;
@@ -22,13 +23,19 @@ public class PlungerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         joint = GetComponent<SpringJoint>();
+        if (joint != null)
+        {
+            joint.spring = Spring;
+            joint.damper = Damper;
+        }
     }
 
-    private void OnValidate()
+    void OnValidate()
     {
         if (joint != null)
         {
             joint.spring = Spring;
+            joint.damper = Damper;
         }
     }
 
