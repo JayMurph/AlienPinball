@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 572828524}
   - component: {fileID: 572828523}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Bank1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2068,7 +2068,7 @@ Transform:
   m_GameObject: {fileID: 572828521}
   m_LocalRotation: {x: 1.1102232e-17, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.569, y: 6.1302, z: -6.8009}
-  m_LocalScale: {x: 0.18262966, y: 0.18262966, z: 0.18262966}
+  m_LocalScale: {x: 0.18262966, y: 0.12, z: 0.18262966}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444044434}
@@ -12312,7 +12312,7 @@ GameObject:
   - component: {fileID: 2072131651}
   - component: {fileID: 2072131650}
   m_Layer: 0
-  m_Name: PolyShape
+  m_Name: Bank2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12773,7 +12773,7 @@ Transform:
   m_GameObject: {fileID: 2072131649}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.062379, y: 6.1299, z: -7.2575}
-  m_LocalScale: {x: 0.18262966, y: 0.18262966, z: 0.18262966}
+  m_LocalScale: {x: 0.18262966, y: 0.12, z: 0.18262966}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444044434}
