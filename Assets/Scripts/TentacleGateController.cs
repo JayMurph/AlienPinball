@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public class TentacleGateController : MonoBehaviour
 {
     [SerializeField]
@@ -12,17 +10,8 @@ public class TentacleGateController : MonoBehaviour
     [SerializeField]
     private string isOpenPropertyName;
 
+    [SerializeField]
     private Animator animator;
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    private void OnValidate()
-    {
-        animator = GetComponent<Animator>();
-    }
 
     public void Open()
     {

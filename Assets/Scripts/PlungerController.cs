@@ -14,6 +14,11 @@ public class PlungerController : MonoBehaviour
     public float Spring = 100f;
     public float Damper = 4f;
 
+    [SerializeField]
+    private TentacleGateController tentacleGate;
+    [SerializeField]
+    private string ballTag;
+
     private SpringJoint joint;
     private Rigidbody body;
     private bool isCompressed = false;
@@ -63,4 +68,11 @@ public class PlungerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == ballTag)
+        {
+            tentacleGate.Open();
+        }
+    }
 }

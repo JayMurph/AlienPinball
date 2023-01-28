@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class PinballGameController : MonoBehaviour
 {
     public UnityEvent GameOver;
-    public UnityEvent DeadBall;
 
     public int StartingBalls = 3;
 
@@ -76,7 +75,6 @@ public class PinballGameController : MonoBehaviour
         }
         else
         {
-            DeadBall.Invoke();
             balls--;
             ballsRemainingValueText.text = balls.ToString();
             var newBall = Instantiate(ballPrefab, ballSpawnTransform.parent);
