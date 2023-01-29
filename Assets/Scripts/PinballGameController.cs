@@ -19,15 +19,14 @@ public class PinballGameController : MonoBehaviour
     private AudioSource bellSound;
     [SerializeField]
     private AudioSource gameOverSound;
+    [SerializeField]
+    BallController ball;
 
     [SerializeField]
     private MessageChannelScriptableObject scoreEventChannel;
 
     [SerializeField]
     private Transform ballSpawnTransform;
-
-    [SerializeField]
-    private GameObject ballPrefab;
 
     [SerializeField]
     private TextMeshProUGUI ballsRemainingValueText;
@@ -77,8 +76,7 @@ public class PinballGameController : MonoBehaviour
         {
             balls--;
             ballsRemainingValueText.text = balls.ToString();
-            var newBall = Instantiate(ballPrefab, ballSpawnTransform.parent);
-            newBall.transform.position = ballSpawnTransform.position;
+            ball.transform.position = ballSpawnTransform.position;
         }
     }
 

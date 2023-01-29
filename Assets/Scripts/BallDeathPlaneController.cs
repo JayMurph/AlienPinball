@@ -14,7 +14,6 @@ public class BallDeathPlaneController : MonoBehaviour
     {
         if (collision.gameObject.tag == ballTag)
         {
-            Destroy(collision.gameObject);
             BallCollision.Invoke();
         }
     }
