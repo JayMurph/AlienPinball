@@ -11,7 +11,7 @@ public class ScoreOnBallCollision : MonoBehaviour
     private Light scoreLight = null;
 
     [SerializeField]
-    private MessageChannelScriptableObject scoreChannel;
+    private IntMessageChannelScriptableObject scoreChannel;
 
     [SerializeField]
     private string ballTag;

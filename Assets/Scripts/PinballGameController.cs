@@ -23,10 +23,7 @@ public class PinballGameController : MonoBehaviour
     BallController ball;
 
     [SerializeField]
-    private MessageChannelScriptableObject scoreEventChannel;
-
-    [SerializeField]
-    private Transform ballSpawnTransform;
+    private IntMessageChannelScriptableObject scoreEventChannel;
 
     [SerializeField]
     private TextMeshProUGUI ballsRemainingValueText;
@@ -76,7 +73,7 @@ public class PinballGameController : MonoBehaviour
         {
             balls--;
             ballsRemainingValueText.text = balls.ToString();
-            ball.transform.position = ballSpawnTransform.position;
+            ball.Respawn();
         }
     }
 

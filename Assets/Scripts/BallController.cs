@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -13,19 +11,25 @@ public class BallController : MonoBehaviour
 
     [SerializeField]
     private Collider activeGroundTriggerCollider;
+    [SerializeField]
+    private Transform respawnPoint;
 
     Rigidbody body;
-    Collider collider;
+    Collider col;
 
     private bool onActiveGround = false;
     private Coroutine moveSleepingBodyAfterDelayCoroutine;
     private readonly float sweepAngleIncrements = 30f;
+    public void Respawn()
+    {
+        transform.position = respawnPoint.position;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();        
-        collider = GetComponent<Collider>();
+        col = GetComponent<Collider>();
     }
 
     public void AddForce(Vector3 force)
@@ -55,16 +59,26 @@ public class BallController : MonoBehaviour
         if (body.IsSleeping() && onActiveGround && moveSleepingBodyAfterDelayCoroutine != null)
         {
             Vector3 moveDir = Vector3.zero;
+            bool canMove = false;
             for (float i = 0; i < 360; i += sweepAngleIncrements)
             {
-                moveDir = Quaternion.Euler(0, sweepAngleIncrements, 0) * transform.forward;
-                if (!body.SweepTest(moveDir, out RaycastHit hitInfo, collider.bounds.extents.x * 1, QueryTriggerInteraction.Ignore))
+                moveDir = Quaternion.Euler(0, sweepAngleIncrements, 0) * activeGroundTriggerCollider.transform.forward;
+                if (!body.SweepTest(moveDir, out RaycastHit hitInfo, col.bounds.extents.x / 4, QueryTriggerInteraction.Ignore))
                 {
+                    canMove = true;
                     break;
                 }
             }
-            body.AddForce(moveDir);
-            moveSleepingBodyAfterDelayCoroutine = null;
+
+            if (canMove)
+            {
+                body.AddForce(activeGroundTriggerCollider.transform.up);
+                moveSleepingBodyAfterDelayCoroutine = null;
+            }
+            else //stuck
+            {
+                Respawn();
+            }
         }
     }
 
