@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42919d15c48bc5a4ea2a1729442efb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSleepTimeSecs: 1.5
+  MaxSleepTimeSecs: 1
   SleepBumpForce: 15
   activeGroundTriggerCollider: {fileID: 0}
+  respawnPoint: {fileID: 0}

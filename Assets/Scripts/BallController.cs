@@ -20,6 +20,7 @@ public class BallController : MonoBehaviour
     private bool onActiveGround = false;
     private Coroutine moveSleepingBodyAfterDelayCoroutine;
     private readonly float sweepAngleIncrements = 30f;
+
     public void Respawn()
     {
         transform.position = respawnPoint.position;
