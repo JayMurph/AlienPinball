@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb45dea9b6d45d49b062605ffd902b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballTag: Ball
+  closingObjectTag: Ball
   isOpenPropertyName: IsOpen
   animator: {fileID: 1686055465}
 --- !u!54 &761784
@@ -1602,10 +1602,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  CompressForce: 35
+  CompressionForce: 35
   Spring: 400
   Damper: 4
-  tentacleGate: {fileID: 761783}
+  gate: {fileID: 761783}
   ballTag: Ball
 --- !u!145 &174930308
 SpringJoint:
@@ -3318,13 +3318,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3f6ccb47e425e448eb0d7142dfda36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallCollision:
+  Collision:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 224367026}
         m_TargetAssemblyTypeName: PinballGameController, Assembly-CSharp
         m_MethodName: OnBallDeath
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3333,7 +3333,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ballTag: Ball
+  collisionObjectTag: Ball
 --- !u!65 &315363088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4267,10 +4267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9d054cf33beb246b2a6f633fea9574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axis: {x: 0, y: 0, z: 1}
   MinSecs: 3
   MaxSecs: 6
   Force: 0.05
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!43 &510658758
 Mesh:
   m_ObjectHideFlags: 0
@@ -4601,10 +4601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9d054cf33beb246b2a6f633fea9574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axis: {x: 0, y: 0, z: 1}
   MinSecs: 3
   MaxSecs: 6
   Force: 0.05
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!1 &544802176
 GameObject:
   m_ObjectHideFlags: 0
@@ -16019,10 +16019,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9d054cf33beb246b2a6f633fea9574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axis: {x: 0, y: 0, z: 1}
   MinSecs: 3
   MaxSecs: 6
   Force: 0.05
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!1 &1307980063
 GameObject:
   m_ObjectHideFlags: 0
@@ -17247,8 +17247,8 @@ MonoBehaviour:
         m_CallState: 2
   Force: 3500
   Spring: 15
-  Min: -50
-  Max: 0
+  MinRotationAngle: -50
+  MaxRotationAngle: 0
   body: {fileID: 1053823467}
   joint: {fileID: 1053823472}
 --- !u!82 &1485718789
@@ -17508,10 +17508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9d054cf33beb246b2a6f633fea9574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axis: {x: 0, y: 0, z: 1}
   MinSecs: 3
   MaxSecs: 6
   Force: 0.05
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!1 &1561704895
 GameObject:
   m_ObjectHideFlags: 0
@@ -18347,10 +18347,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9d054cf33beb246b2a6f633fea9574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axis: {x: 0, y: 0, z: 1}
   MinSecs: 3
   MaxSecs: 6
   Force: 0.05
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!1 &1690011518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a6f05c960da59214086344cbdccfa5b1,
@@ -19520,10 +19520,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9d054cf33beb246b2a6f633fea9574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Axis: {x: 0, y: 0, z: 1}
   MinSecs: 3
   MaxSecs: 6
   Force: 0.05
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!43 &1791861894
 Mesh:
   m_ObjectHideFlags: 0
@@ -22761,8 +22761,8 @@ MonoBehaviour:
         m_CallState: 2
   Force: 3500
   Spring: 15
-  Min: 0
-  Max: 50
+  MinRotationAngle: 0
+  MaxRotationAngle: 50
   body: {fileID: 3699887112663247931}
   joint: {fileID: 3699887112663247904}
 --- !u!82 &3699887111081097429
