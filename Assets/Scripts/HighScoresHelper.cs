@@ -8,9 +8,9 @@ using UnityEngine;
 public class HighScoresHelper : MonoBehaviour
 {
     [SerializeField]
-    private string highScoresKey = "highscores"; 
+    private string highScoresKey = "highscores";
 
-    private List<Tuple<string, int>> highScores = new List<Tuple<string, int>>();
+    private List<Tuple<string, int>> highScores = new List<Tuple<string, int>>(); 
 
     private readonly int MAX_HIGH_SCORES = 5;
 
@@ -20,6 +20,7 @@ public class HighScoresHelper : MonoBehaviour
         if (PlayerPrefs.HasKey(highScoresKey))
         {
             highScores = JsonConvert.DeserializeObject<List<Tuple<string, int>>>(PlayerPrefs.GetString(highScoresKey));
+            highScores = highScores.OrderByDescending(x => x.Item2).ToList();
         }
         else
         {
@@ -35,7 +36,7 @@ public class HighScoresHelper : MonoBehaviour
 
     public List<Tuple<string, int>> GetHighScores()
     {
-        return highScores;
+        return highScores.OrderByDescending(t => t.Item2).ToList();
     }
 
     public bool IsNewHighScore(int score)
@@ -48,13 +49,14 @@ public class HighScoresHelper : MonoBehaviour
         if (highScores.Count < MAX_HIGH_SCORES)
         {
             highScores.Add(new Tuple<string, int>(name, score));
-            highScores = highScores.OrderBy(t => t.Item2).ToList();
+            highScores = highScores.OrderByDescending(t => t.Item2).ToList();
             return true;
         }
         else if (highScores.Any(t => t.Item2 < score))
         {
-            highScores.RemoveAt(highScores.Count - 1);
+            highScores = highScores.OrderByDescending(t => t.Item2).ToList();
             highScores.Insert(highScores.FindIndex(t => t.Item2 < score), new Tuple<string, int>(name, score));
+            highScores.RemoveAt(highScores.Count - 1);
             return true;
         }
 

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PinballGameController : MonoBehaviour
 {
-    public UnityEvent GameOver;
+    public UnityEvent<int> GameOver;
 
     public int StartingBalls = 3;
 
@@ -30,9 +30,6 @@ public class PinballGameController : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI scoreValueText;
-
-    [SerializeField]
-    TextMeshProUGUI finalScoreValueText;
 
     private int balls;
     private int score;
@@ -66,8 +63,7 @@ public class PinballGameController : MonoBehaviour
         {
             backgroundMusic.Stop();
             gameOverSound.Play();
-            finalScoreValueText.text = score.ToString();
-            GameOver.Invoke();
+            GameOver.Invoke(score);
         }
         else
         {
@@ -75,10 +71,5 @@ public class PinballGameController : MonoBehaviour
             ballsRemainingValueText.text = balls.ToString();
             ball.Respawn();
         }
-    }
-
-    public void ReturnToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenuScene");
     }
 }

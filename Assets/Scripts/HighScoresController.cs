@@ -15,7 +15,7 @@ public class HighScoresController : MonoBehaviour
     void Start()
     {
         helper = GetComponent<HighScoresHelper>();
-        helper.GetHighScores().ForEach(t => text.text += $"{t.Item1,3} - {t.Item2,-6}\n");
+        helper.GetHighScores().ForEach(t => text.text += $"{t.Item1,-4} : {t.Item2,6}\n");
     }
 
     // Update is called once per frame
