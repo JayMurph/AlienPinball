@@ -17,7 +17,9 @@ public class SlingShotController : MonoBehaviour
 
             if (ball != null)
             {
-                ball.AddForce(collision.GetContact(0).normal * -1 * Force);
+                var normal = collision.GetContact(0).normal;
+                normal.y = 0;
+                ball.AddForce(normal * -1 * Force);
             }
         }
     }
