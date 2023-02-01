@@ -285,6 +285,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockModel
       objectReference: {fileID: 0}
+    - target: {fileID: 6741210398040927171, guid: 1fabb9c5b652be8458bdb51aff51cec1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6202392741857895490, guid: 23d0a75a70d117d4bb172c4f0350a297,
+        type: 3}
+    - target: {fileID: 7084370601668738097, guid: 1fabb9c5b652be8458bdb51aff51cec1,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4013275331872712965, guid: 23d0a75a70d117d4bb172c4f0350a297,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fabb9c5b652be8458bdb51aff51cec1, type: 3}
 --- !u!4 &8640199949154906879 stripped
@@ -312,4 +324,4 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -9032557090061056480, guid: 1fabb9c5b652be8458bdb51aff51cec1, type: 3}
+  m_Mesh: {fileID: 4013275331872712965, guid: 23d0a75a70d117d4bb172c4f0350a297, type: 3}
