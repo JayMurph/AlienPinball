@@ -3,7 +3,7 @@
  * PROJECT          : SENG3060-A1
  * PROGRAMMER       : Joshua Murphy
  * FIRST VERSION    : February 1, 2023
- * DESCRIPTION      :
+ * DESCRIPTION      : Contains the BallController class
  */
 using System.Collections;
 using UnityEngine;
