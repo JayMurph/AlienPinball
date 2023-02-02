@@ -128,6 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSleepTimeSecs: 1
-  SleepBumpForce: 15
+  SleepBumpForce: 3
   activeGroundTriggerCollider: {fileID: 0}
   respawnPoint: {fileID: 0}

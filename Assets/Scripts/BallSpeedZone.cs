@@ -80,7 +80,7 @@ public class BallSpeedZone : MonoBehaviour
         if (ball != null)
         {
             yield return new WaitForSeconds(delaySecs);
-            ball.AddForce(Direction * Force); 
+            ball.SetForce(Direction * Force); 
         } 
     }
 }

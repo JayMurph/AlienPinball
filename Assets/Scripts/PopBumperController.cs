@@ -66,7 +66,7 @@ public class PopBumperController : MonoBehaviour
                 // force the pinball back at a random angle around the collision y axis
                 float randomAngle = Random.Range(-reflectAngleHalf, reflectAngleHalf);
                 Vector3 reflectDirection = Quaternion.Euler(new Vector3(0, randomAngle, 0)) * (collision.GetContact(0).normal * -1);
-                ball.AddForce(reflectDirection * Force);
+                ball.SetForce(reflectDirection * Force);
             }
         }
     }

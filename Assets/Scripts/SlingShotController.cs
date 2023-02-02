@@ -29,23 +29,27 @@ public class SlingShotController : MonoBehaviour
     /// <param name="collision">Information about the collision</param>
     void OnCollisionEnter(Collision collision)
     {
-        // Check if were hit by the pinball
+        // Check if we were hit by the pinball
         if (collision.gameObject.tag == pinballTag)
         {
             BallController ball = collision.gameObject.GetComponent<BallController>();
 
             if (ball != null)
             {
+                // get the normal of the collision and make it parallel it to the floor -
+                // this is done to avoid weird collisions with slingshot's mesh
                 Vector3 collisionNormal = collision.GetContact(0).normal;
                 Quaternion collisionRotation = Quaternion.LookRotation(collisionNormal);
-                Vector3 floorAlignedCollisionNormal = Quaternion.Euler(collisionRotation.eulerAngles.x, 0, collisionRotation.eulerAngles.z) * 
+                Vector3 floorAlignedCollisionNormal = 
+                    Quaternion.Euler(collisionRotation.eulerAngles.x, 0, collisionRotation.eulerAngles.z) * 
                     Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z) *    
                     collisionNormal;
 
+                // reverse the floor aligned collision normal
                 Vector3 reflectionDirection = floorAlignedCollisionNormal * -1;
 
                 // force the ball back in the opposite direction of the collision
-                ball.AddForce(reflectionDirection * Force);
+                ball.SetForce(reflectionDirection * Force);
             }
         }
     }
