@@ -6,6 +6,7 @@
  * DESCRIPTION      : Contains the SlingShotController class
  */
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 /// <summary>
 /// Emulates a pinball slingshot bumper that applies a reflective force to
@@ -36,17 +37,15 @@ public class SlingShotController : MonoBehaviour
             if (ball != null)
             {
                 Vector3 collisionNormal = collision.GetContact(0).normal;
+                Quaternion collisionRotation = Quaternion.LookRotation(collisionNormal);
+                Vector3 floorAlignedCollisionNormal = Quaternion.Euler(collisionRotation.eulerAngles.x, 0, collisionRotation.eulerAngles.z) * 
+                    Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z) *    
+                    collisionNormal;
 
-                /*
-                 * HACK. because slingshot model is jagged, there is a
-                 * possibility to bounce the ball up, so well use our
-                 * transforms tilt as the y component for reflection. NEGATE it
-                 * because slingshot prefab is upside down
-                 */
-                collisionNormal.y = -transform.forward.y; 
+                Vector3 reflectionDirection = floorAlignedCollisionNormal * -1;
 
                 // force the ball back in the opposite direction of the collision
-                ball.AddForce(collisionNormal * -1 * Force);
+                ball.AddForce(reflectionDirection * Force);
             }
         }
     }

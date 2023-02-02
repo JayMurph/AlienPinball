@@ -115,7 +115,7 @@ public class PlungerController : MonoBehaviour
     /// <param name="collision">Information about the collision</param>
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == ballTag)
+        if (collision.gameObject.CompareTag(ballTag))
         {
             gate.Open();
         }

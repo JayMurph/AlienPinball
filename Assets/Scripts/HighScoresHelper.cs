@@ -1,18 +1,36 @@
+/**
+ * FILE             : HighScoresHelper.cs
+ * PROJECT          : SENG3060-A1
+ * PROGRAMMER       : Joshua Murphy
+ * FIRST VERSION    : February 1, 2023
+ * DESCRIPTION      : Contains the HighScoresHelper class
+ */
 using Newtonsoft.Json;
 using System;
 using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages and provides access to the high scores of the pinball game
+/// </summary>
 public class HighScoresHelper : MonoBehaviour
 {
+    /// <summary>
+    /// Key value to use when saving high scores to player prefs
+    /// </summary>
     [SerializeField]
     private string highScoresKey = "highscores";
 
+    /// <summary>
+    /// high scores. Tuples containsstring with user's initials and their associated high score
+    /// </summary>
     private List<Tuple<string, int>> highScores = new List<Tuple<string, int>>(); 
 
-    private readonly int MAX_HIGH_SCORES = 5;
+    /// <summary>
+    /// Max number of high scores to save 
+    /// </summary>
+    private const int MAX_HIGH_SCORES = 5;
 
     // Start is called before the first frame update
     void Awake()

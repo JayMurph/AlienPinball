@@ -2876,7 +2876,7 @@ GameObject:
   - component: {fileID: 2051571861}
   - component: {fileID: 2051571860}
   m_Layer: 5
-  m_Name: ScoresContainer
+  m_Name: HighScoresDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

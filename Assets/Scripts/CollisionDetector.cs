@@ -31,7 +31,7 @@ public class CollisionDetector : MonoBehaviour
     /// <param name="collision">Information about the collision</param>
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == collisionObjectTag)
+        if (collision.gameObject.CompareTag(collisionObjectTag))
         {
             Collision.Invoke();
         }

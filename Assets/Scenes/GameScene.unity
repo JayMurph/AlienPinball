@@ -4665,7 +4665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: -1}
   Force: 15
-  StationaryDelaySecs: 1
+  DelayBeforeApplyingForceSecs: 1
   ballTag: Ball
 --- !u!1001 &561576397
 PrefabInstance:
@@ -17903,7 +17903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: -1}
   Force: 15
-  StationaryDelaySecs: 1
+  DelayBeforeApplyingForceSecs: 1
   ballTag: Ball
 --- !u!4 &1596078600 stripped
 Transform:

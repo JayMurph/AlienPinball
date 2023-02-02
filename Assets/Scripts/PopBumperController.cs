@@ -57,7 +57,7 @@ public class PopBumperController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // if we collided with the pinball
-        if (collision.gameObject.tag == ballTag)
+        if (collision.gameObject.CompareTag(ballTag))
         {
             BallController ball = collision.gameObject.GetComponent<BallController>();
 
