@@ -1,0 +1,3 @@
+The stretch goal that I implemented was a high-score system. The game stores up to 5 high scores. At the end of the game, if the user achieves a new top 5, high-score, they will be able to enter up to 4 initials (just alphanumeric characters) to save the high-score under. If the user does not enter initials, then the high-score is not saved. The user can view the top 5 high-scores by using the "High Scores" button in the game's Main Menu.
+
+The only assets that I did not create were the starry background of the pinball game scene, the text font, and the earth texture used on the pinball model. All of the previously mentioned assets were available under the creative commons license and do not require attribution.
