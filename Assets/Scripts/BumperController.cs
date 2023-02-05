@@ -11,7 +11,7 @@ using UnityEngine;
 /// Emulates a pinball pop bumper. Applies a reflective force to a pinball,
 /// upon collision, at a random angle around the Y axis
 /// </summary>
-public class PopBumperController : MonoBehaviour
+public class BumperController : MonoBehaviour
 {
     public float Force = 0.32f;
 
