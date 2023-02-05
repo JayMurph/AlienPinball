@@ -1,15 +1,15 @@
 /**
- * FILE             : PopBumperController.cs
+ * FILE             : BumperController.cs
  * PROJECT          : SENG3060-A1
  * PROGRAMMER       : Joshua Murphy
  * FIRST VERSION    : February 1, 2023
- * DESCRIPTION      : Contains the PopBumperController class
+ * DESCRIPTION      : Contains the BumperController class
  */
 using UnityEngine;
 
 /// <summary>
-/// Emulates a pinball pop bumper. Applies a reflective force to a pinball,
-/// upon collision, at a random angle around the Y axis
+/// Emulates a pinball bumper. Applies a reflective impulse force to a pinball, upon
+/// collision, at a random angle around the Y axis
 /// </summary>
 public class BumperController : MonoBehaviour
 {
@@ -54,11 +54,20 @@ public class BumperController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detects if colliding object is pinball then bounces it back
+    /// </summary>
+    /// <param name="collision">information about the collision</param>
     private void OnCollisionEnter(Collision collision)
     {
         OnColliderEnter(collision.collider);
     }
 
+    /// <summary>
+    /// Detects if the entering collider is a pinball, then bounces it back in
+    /// the opposite direction with an impulse force
+    /// </summary>
+    /// <param name="other">The entering collider</param>
     private void OnColliderEnter(Collider other)
     {
         // if we collided with the pinball
@@ -72,6 +81,7 @@ public class BumperController : MonoBehaviour
 
                 if (reflectAngleHalf != 0)
                 {
+                    // randomize the angle of the ball reflection
                     float randomAngle = Random.Range(-reflectAngleHalf, reflectAngleHalf);
                     reflectionDirection = Quaternion.Euler(new Vector3(0, randomAngle, 0)) * reflectionDirection;
                 }
