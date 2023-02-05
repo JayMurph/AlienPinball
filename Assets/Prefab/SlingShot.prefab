@@ -172,8 +172,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7480390691895869807}
   - component: {fileID: 2169213917419696913}
-  - component: {fileID: 7480390691895869782}
   - component: {fileID: 6787179652632605359}
+  - component: {fileID: 68749008257440938}
   m_Layer: 0
   m_Name: SlingShot
   m_TagString: Untagged
@@ -214,20 +214,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &7480390691895869782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480390691895869806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad50ed164538cde46800cef94e5b2059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Force: 14
-  pinballTag: Ball
 --- !u!114 &6787179652632605359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +230,21 @@ MonoBehaviour:
   TimeoutSecs: 0.5
   scoreLight: {fileID: 3615884656504070247}
   scoreChannel: {fileID: 11400000, guid: 532c0d4525af96a4c84bdf9c45f7fc83, type: 2}
+  ballTag: Ball
+--- !u!114 &68749008257440938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480390691895869806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893372328b47fff4e8fd70afd1f8740e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 0.32
+  ReflectAngleRange: 0
   ballTag: Ball
 --- !u!1001 &2421385728029966649
 PrefabInstance:

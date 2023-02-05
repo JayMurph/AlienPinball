@@ -82,6 +82,11 @@ public class BallController : MonoBehaviour
     /// Adds a force to the pinball
     /// </summary>
     /// <param name="force">Force to apply to the pinball</param>
+    public void AddImpulse(Vector3 force)
+    {
+        body.AddForce(force, ForceMode.Impulse);
+    }
+
     public void AddForce(Vector3 force)
     {
         body.AddForce(force);

@@ -62,10 +62,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2709659898087172031, guid: 10549a43c30c27944a5763b7cfe28a66,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2709659898721053028, guid: 10549a43c30c27944a5763b7cfe28a66,
         type: 3}
       propertyPath: m_Name
-      value: HorizontalFlipGate-2
+      value: FlipGateVar1
       objectReference: {fileID: 0}
     - target: {fileID: 2709659899160355457, guid: 10549a43c30c27944a5763b7cfe28a66,
         type: 3}

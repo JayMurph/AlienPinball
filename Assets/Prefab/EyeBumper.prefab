@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893372328b47fff4e8fd70afd1f8740e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 30
+  Force: 0.6
   ReflectAngleRange: 60
   ballTag: Ball
 --- !u!114 &9024699780844954551

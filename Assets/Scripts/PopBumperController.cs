@@ -13,12 +13,12 @@ using UnityEngine;
 /// </summary>
 public class PopBumperController : MonoBehaviour
 {
-    public float Force = 14f;
+    public float Force = 0.32f;
 
     /// <summary>
     /// Range for random angle at which to relect the pinball around the Y axis
     /// </summary>
-    public float ReflectAngleRange = 60f;
+    public float ReflectAngleRange = 0f;
 
     /// <summary>
     /// Identifies pinball object during collision
@@ -30,14 +30,17 @@ public class PopBumperController : MonoBehaviour
     /// Used to avoid recalculating whenever we need to generate a random reflect
     /// angle with 0 as the midpoint
     /// </summary>
-    private float reflectAngleHalf;
+    private float reflectAngleHalf = 0;
 
     /// <summary>
     /// Calculate and store half the provided reflect angle range
     /// </summary>
     void Start()
     {
-        reflectAngleHalf = ReflectAngleRange / 2;
+        if (ReflectAngleRange != 0)
+        {
+            reflectAngleHalf = ReflectAngleRange / 2;
+        }
     }
 
     /// <summary>
@@ -45,7 +48,10 @@ public class PopBumperController : MonoBehaviour
     /// </summary>
     private void OnValidate()
     {
-        reflectAngleHalf = ReflectAngleRange / 2;
+        if (ReflectAngleRange != 0)
+        {
+            reflectAngleHalf = ReflectAngleRange / 2;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -62,11 +68,15 @@ public class PopBumperController : MonoBehaviour
 
             if (ball != null)
             {
-                // force the pinball back at a random angle around the collision y axis
-                float randomAngle = Random.Range(-reflectAngleHalf, reflectAngleHalf);
-                Vector3 collisionDirection = (transform.position - other.ClosestPointOnBounds(transform.position)).normalized;
-                Vector3 reflectDirection = Quaternion.Euler(new Vector3(0, randomAngle, 0)) * (collisionDirection * -1);
-                ball.AddForce(reflectDirection * Force);
+                Vector3 reflectionDirection = (transform.position - other.ClosestPointOnBounds(transform.position)).normalized * -1;
+
+                if (reflectAngleHalf != 0)
+                {
+                    float randomAngle = Random.Range(-reflectAngleHalf, reflectAngleHalf);
+                    reflectionDirection = Quaternion.Euler(new Vector3(0, randomAngle, 0)) * reflectionDirection;
+                }
+
+                ball.AddImpulse(reflectionDirection * Force);
             }
         }
     }
