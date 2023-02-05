@@ -79,12 +79,11 @@ public class BallController : MonoBehaviour
     }
 
     /// <summary>
-    /// Zeros out the pinballs velocity then adds a force to it
+    /// Adds a force to the pinball
     /// </summary>
     /// <param name="force">Force to apply to the pinball</param>
-    public void SetForce(Vector3 force)
+    public void AddForce(Vector3 force)
     {
-        body.velocity = Vector3.zero;
         body.AddForce(force);
     }
 

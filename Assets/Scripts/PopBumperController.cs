@@ -48,25 +48,25 @@ public class PopBumperController : MonoBehaviour
         reflectAngleHalf = ReflectAngleRange / 2;
     }
 
-    /// <summary>
-    /// Determines if a pinball collided with the object in which case it
-    /// bounces the ball back at a random angle around the Y axis within the
-    /// given range
-    /// </summary>
-    /// <param name="collision">Information about the collision</param>
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
+    {
+        OnColliderEnter(collision.collider);
+    }
+
+    private void OnColliderEnter(Collider other)
     {
         // if we collided with the pinball
-        if (collision.gameObject.CompareTag(ballTag))
+        if (other.gameObject.CompareTag(ballTag))
         {
-            BallController ball = collision.gameObject.GetComponent<BallController>();
+            BallController ball = other.gameObject.GetComponent<BallController>();
 
             if (ball != null)
             {
                 // force the pinball back at a random angle around the collision y axis
                 float randomAngle = Random.Range(-reflectAngleHalf, reflectAngleHalf);
-                Vector3 reflectDirection = Quaternion.Euler(new Vector3(0, randomAngle, 0)) * (collision.GetContact(0).normal * -1);
-                ball.SetForce(reflectDirection * Force);
+                Vector3 collisionDirection = (transform.position - other.ClosestPointOnBounds(transform.position)).normalized;
+                Vector3 reflectDirection = Quaternion.Euler(new Vector3(0, randomAngle, 0)) * (collisionDirection * -1);
+                ball.AddForce(reflectDirection * Force);
             }
         }
     }

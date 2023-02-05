@@ -22,34 +22,39 @@ public class SlingShotController : MonoBehaviour
     [SerializeField]
     private string pinballTag;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        OnColliderEnter(collision.collider);
+    }
+
     /// <summary>
-    /// Determines if the colliding object is a pinball, then applies a force
+    /// Determines if the entering collider is a pinball, then applies a force
     /// to the ball in the oppopsite direction of the collision
     /// </summary>
-    /// <param name="collision">Information about the collision</param>
-    void OnCollisionEnter(Collision collision)
+    /// <param name="collider">The collider that is staying</param>
+    private void OnColliderEnter(Collider collider)
     {
         // Check if we were hit by the pinball
-        if (collision.gameObject.tag == pinballTag)
+        if (collider.gameObject.tag == pinballTag)
         {
-            BallController ball = collision.gameObject.GetComponent<BallController>();
+            BallController ball = collider.GetComponent<BallController>();
 
             if (ball != null)
             {
                 // get the normal of the collision and make it parallel it to the floor -
                 // this is done to avoid weird collisions with slingshot's mesh
-                Vector3 collisionNormal = collision.GetContact(0).normal;
-                Quaternion collisionRotation = Quaternion.LookRotation(collisionNormal);
+                Vector3 collisionDirection = (transform.position - collider.ClosestPointOnBounds(transform.position)).normalized;
+                Quaternion collisionRotation = Quaternion.LookRotation(collisionDirection);
                 Vector3 floorAlignedCollisionNormal = 
                     Quaternion.Euler(collisionRotation.eulerAngles.x, 0, collisionRotation.eulerAngles.z) * 
                     Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z) *    
-                    collisionNormal;
+                    collisionDirection;
 
                 // reverse the floor aligned collision normal
                 Vector3 reflectionDirection = floorAlignedCollisionNormal * -1;
 
                 // force the ball back in the opposite direction of the collision
-                ball.SetForce(reflectionDirection * Force);
+                ball.AddForce(reflectionDirection * Force);
             }
         }
     }

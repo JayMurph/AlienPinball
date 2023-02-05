@@ -56,13 +56,33 @@ public class ScoreOnBallCollision : MonoBehaviour
     }
 
     /// <summary>
-    /// Publishes a score event and turns on the object's light
+    /// Evaluates colliding object to determine if it is the ball and if a
+    /// score should be published
     /// </summary>
     /// <param name="collision">Information about the collision</param>
     void OnCollisionEnter(Collision collision)
     {
+        OnObjectEnter(collision.gameObject); 
+    }
+
+    /// <summary>
+    /// Evaluates the triggering object to determine if it is the ball and if a
+    /// score should be published
+    /// </summary>
+    /// <param name="other">The triggering object</param>
+    private void OnTriggerEnter(Collider other)
+    {
+        OnObjectEnter(other.gameObject); 
+    }
+
+    /// <summary>
+    /// Publishes a score event and turns on the object's light
+    /// </summary>
+    /// <param name="go">The object that entered this one</param>
+    private void OnObjectEnter(GameObject go)
+    {
         //If we collided with ball, and enough time has elapsed since the last collision
-        if (collision.gameObject.tag == ballTag && 
+        if (go.tag == ballTag && 
             (lastScoreTimeSecs == 0 || lastScoreTimeSecs < Time.time + TimeoutSecs))
         {
             lastScoreTimeSecs = Time.time;
